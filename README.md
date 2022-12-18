@@ -6,4 +6,7 @@ With the evolution of machine learning techniques, such as deep learning, convol
  
 In this project, we will implement and control the output of a GAN model in the "post-processing" phase of the rendering pipeline. The post-processing phase, as its name indicates, comes after processing the so-called gbuffers that output the composite image of our interactive application. In essence, our GAN model will evaluate the realism of this composite image and will output a corrected version of it in the post-processing phase, as seen in the screenshot above, which shows how a graphics pipeline generally works.
 
+In other words, our model will be able to interpret the synthetic image's intention in the rendering pipeline's processed phase and generate a corrected version of it in the post-processing phase, capturing the aspects of photorealistic appearances. 
+
+To achieve this, the expected output quality of the processing phase (i.e., gbuffers) can be something other than an attempt at photorealism. Instead, it should contain enough information to be distinguishable and ready for interpretation. Attempting to achieve photorealism in the processed phase of the rendering pipeline comes with a high computational cost that is preferable to be avoided. We propose to have the lightest possible output from that phase.
 
